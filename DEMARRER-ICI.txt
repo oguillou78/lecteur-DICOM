@@ -1,0 +1,19 @@
+DICOM CLAIR PRO — EXPLORATEUR PET/CT WINDOWS 10
+==============================================
+1) Installez Python 3.11 ou 3.12 (64 bits) et Inno Setup 6.
+2) Ouvrez le dossier du projet et lancez CONSTRUIRE-WINDOWS.bat.
+3) Le script installe les bibliothèques, exécute les tests et produit les fichiers
+   d'application. Inno Setup fabrique l'installateur s'il est trouvé.
+4) Installez DICOM Clair puis ouvrez l'onglet « Explorateur PET/CT ».
+5) Sélectionnez le dossier principal de l'examen (ex. le dossier qui contient
+   1_TEP NAC, 2_CT APNE MOU, 6_TEP AC 50P, etc.).
+6) Choisissez la série PET corrigée puis une série CT. Déplacez le curseur.
+
+CONFIDENTIALITÉ : les images et métadonnées sont lues localement.
+LIMITES : non médical / pas de diagnostic, pas de détection de cancer,
+ni fusion recalée, ni calcul SUV certifié. L'affichage CT associé est une
+correspondance approximative de plans après contrôles géométriques basiques.
+Ne l'utilisez pas pour déterminer l'étendue d'une maladie. Les fichiers
+DICOM comportent potentiellement des données personnelles de santé.
+
+Ce ZIP contient du code source et non un exe précompilé ou certifié.

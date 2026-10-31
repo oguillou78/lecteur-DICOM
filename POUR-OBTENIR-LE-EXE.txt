@@ -1,0 +1,33 @@
+DICOM CLAIR PRO - INSTALLATEUR WINDOWS 10 (64 BITS)
+===================================================
+
+IMPORTANT : ce paquet contient les sources et un flux de compilation Windows.
+Il ne contient PAS encore d'EXE compile. Ni Python ni Inno Setup ne seront
+necessaires sur le PC Windows qui installera l'EXE final.
+
+COMMENT PRODUIRE LE FICHIER EXE SANS RIEN INSTALLER SUR TON PC
+
+1. Utilise un compte GitHub et cree un depot PRIVE (pour les sources du logiciel).
+2. Ajoute les fichiers et dossiers de ce paquet a la racine du depot.
+   Le fichier .github/workflows/construire-windows.yml doit conserver son chemin.
+   Ne publie jamais de DICOM personnels dans le depot.
+3. Dans GitHub, ouvre l'onglet Actions.
+4. Selectionne « Construire installateur Windows » puis « Run workflow ».
+5. Une fois la compilation terminee et reussie, ouvre l'execution.
+6. En bas de page, telecharge l'artifact « DICOM-Clair-Installateur-Windows10 ».
+7. Decompresse l'archive d'artifact et lance
+   DICOM-Clair-Setup-Windows10-x64.exe sur Windows 10 64 bits.
+8. L'assistant d'installation propose un raccourci Bureau et un menu Demarrer.
+
+ATTENTION : ceci est un mode de fabrication, PAS une preuve que l'installation
+fonctionnera sur ton PC. Le projet n'est pas signe numeriquement ; Windows
+SmartScreen peut afficher un avertissement. Ne contourne pas les alertes si tu
+n'as pas confiance dans la provenance de l'executable.
+
+L'application reste un prototype d'exploration et de pedagogie, non un logiciel
+de diagnostic medical. Pas de detection validee de tumeurs, pas de fusion
+PET/CT medicalement validee, pas de calcul SUV medicalement valide.
+
+Les donnees DICOM de ton examen sont privees : ne les ajoute JAMAIS au depot
+ou aux journaux de compilation. Choisis uniquement des fichiers deja presents
+localement sur ton PC lorsque tu executes le logiciel.

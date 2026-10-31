@@ -1,0 +1,43 @@
+DICOM CLAIR PRO 3.0 — PROTOTYPE TECHNIQUE, NON DISPOSITIF MEDICAL
+=================================================================
+
+OBJECTIF : visualiser localement des séries DICOM sur Windows 10 x64.
+Fonctions : navigation par série, vues orthogonales sur axes du volume, fenêtrage,
+inversion de gris, métadonnées, observation statistique non clinique, explications
+pédagogiques, extraction textuelle d'une conclusion de compte rendu.
+
+INSTALLATION POUR GENERER UN VRAI INSTALLATEUR .EXE :
+1. Installer Python 3.11 ou 3.12 x64 depuis python.org (cocher Add to PATH).
+2. Installer Inno Setup 6 depuis jrsoftware.org/isinfo.php.
+3. Double-cliquer CONSTRUIRE-WINDOWS.bat (Internet requis pour installer les dépendances).
+4. Récupérer installateur/DICOM-Clair-Setup-Windows10-x64.exe.
+5. Lancer l'installateur pour installer DICOM Clair, avec raccourci Bureau.
+
+TEST RAPIDE (après installation des dépendances) : python main.py
+
+LIMITES IMPORTANTES :
+- Pas de dispositif médical certifié. Ne pas utiliser pour diagnostic ou soin.
+- Aucun modèle de diagnostic d'image intégré. Les observations portent UNIQUEMENT
+  sur les statistiques des pixels. Aucune lésion ne peut être identifiée.
+- MPR orthogonales aux AXES DE STOCKAGE du volume ; les volumes obliques ne sont
+  pas réorientés sur les axes anatomiques. Pas de MPR clinique certifiée.
+- GDCM et SimpleITK couvrent de nombreuses syntaxes de transfert DICOM, mais
+  pas toutes ; certains objets DICOM (SEG, RTSTRUCT, 4D, couleur, enhanced) ne sont
+  pas pris en charge par cette interface.
+- Il manque validation DICOM multi-constructeurs, tests de sécurité, audit de
+  confidentialité, signatures numériques et validation clinique.
+- Le chargement des grands volumes peut nécessiter une mémoire importante.
+- Le patient peut être identifié dans les fichiers sources ; ne pas les partager.
+- Aucun envoi de données sur Internet dans le code applicatif. Le script de
+  construction installe toutefois les bibliothèques via Internet.
+- Windows 10 n'est plus maintenu normalement depuis octobre 2025 : l'utilisation
+  de données médicales sensibles appelle des protections renforcées ou un OS à jour.
+
+ASSISTANT :
+- Aucune inférence clinique, ni promesse de « modèle fiable ».
+- Explication des notions DICOM et restitution de la section Conclusion du texte
+  fourni : l'extraction peut être incomplète et doit être contrôlée sur l'original.
+- Un futur moteur d'analyse clinique exigerait : objectif médical précis,
+  autorisations/qualification réglementaires pertinentes, validation indépendante
+  multi-sites et multi-scanners, performances documentées, contrôle humain,
+  traçabilité et évaluation des biais. Aucun branchement à une API non validée.
